@@ -1,6 +1,8 @@
 ---
 galaxy_info:
-  author: sgr (originally by Niklaas Baudet von Gersdorff)
+  author: bierchermuesli
+  role_name: dma
+  namespace: bierchermuesli
   description: Installs and configures DragonFly Mail Transport Agent (DMA) to relay mail via a smarthost.
   license: MIT
   min_ansible_version: "2.14"

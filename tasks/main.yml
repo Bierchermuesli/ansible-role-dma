@@ -37,5 +37,5 @@
     group: root
     mode: "0644"
     backup: true
-  notify: update aliases db
+  notify: Update aliases db
   when: dma_alias_mail is defined

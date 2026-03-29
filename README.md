@@ -1,6 +1,6 @@
 # DragonFly Mail Transport Agent (DMA)
 
-[![CI](https://github.com/sgr/ansible-role-dma/actions/workflows/ci.yml/badge.svg)](https://github.com/sgr/ansible-role-dma/actions/workflows/ci.yml)
+[![CI](https://github.com/Bierchermuesli/ansible-role-dma/actions/workflows/ci.yml/badge.svg)](https://github.com/Bierchermuesli/ansible-role-dma/actions/workflows/ci.yml)
 
 Installs and configures [DragonFly Mail Transport Agent (DMA)](https://github.com/corecode/dma)
 to relay mail via a smarthost. Optionally sets a catch-all alias in `/etc/aliases`.

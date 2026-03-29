@@ -1,6 +1,7 @@
 ---
 galaxy_info:
   author: Bierchermuesli
+  namespace: Bierchermuesli
   description: Installs and configures lightweight DragonFly Mail Transport Agent (DMA) to relay mail via a smarthost.
   role_name: dma
   license: MIT

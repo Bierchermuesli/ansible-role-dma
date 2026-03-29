@@ -1,6 +1,8 @@
 # DragonFly Mail Transport Agent (DMA)
 
 [![CI](https://github.com/Bierchermuesli/ansible-role-dma/actions/workflows/ci.yml/badge.svg)](https://github.com/Bierchermuesli/ansible-role-dma/actions/workflows/ci.yml)
+[![Ansible Galaxy](https://img.shields.io/badge/galaxy-Bierchermuesli.dma-blue)](https://galaxy.ansible.com/ui/standalone/roles/Bierchermuesli/dma/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 Installs and configures [DragonFly Mail Transport Agent (DMA)](https://github.com/corecode/dma)
 to relay mail via a smarthost. Optionally sets a catch-all alias in `/etc/aliases`.

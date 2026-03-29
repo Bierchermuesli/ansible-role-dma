@@ -1,2 +1,4 @@
 ---
-# handlers file for dma
+- name: update aliases db
+  ansible.builtin.command: newaliases
+  changed_when: true

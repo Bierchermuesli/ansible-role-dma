@@ -1,30 +1,41 @@
 ---
-- name: install
-  package: name=dma state=latest
+- name: Install dma
+  ansible.builtin.package:
+    name: dma
+    state: present
 
-- name: configure
-  template:
+- name: Configure dma
+  ansible.builtin.template:
     src: dma.conf.j2
     dest: /etc/dma/dma.conf
     owner: root
     group: mail
-    mode: "u=rw,g=r,o="
+    mode: "0640"
 
-- name: configure authorisation
-  template:
+- name: Configure dma authentication
+  ansible.builtin.template:
     src: auth.conf.j2
     dest: /etc/dma/auth.conf
     owner: root
     group: mail
-    mode: "u=rw,g=r,o="
+    mode: "0640"
   when: dma_user is defined or dma_password is defined
 
-- name: set alias to forward all mail
-  template:
+- name: Ensure queue flush cron job
+  ansible.builtin.cron:
+    cron_file: dma
+    name: Flush dma queue
+    user: root
+    minute: "*/5"
+    job: "[ -x /usr/sbin/dma ] && /usr/sbin/dma -q"
+
+- name: Set catch-all mail alias
+  ansible.builtin.template:
     src: aliases.j2
     dest: /etc/aliases
     owner: root
     group: root
-    mode: 0644
-    backup: yes
+    mode: "0644"
+    backup: true
+  notify: update aliases db
   when: dma_alias_mail is defined

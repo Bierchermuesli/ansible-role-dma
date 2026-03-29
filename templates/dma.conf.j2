@@ -4,19 +4,43 @@ SMARTHOST {{ dma_smarthost }}
 {% if dma_port is defined %}
 PORT {{ dma_port }}
 {% endif %}
-{% if dma_securetransfer is defined %}
+{% if dma_securetransfer %}
 SECURETRANSFER
+{% endif %}
+{% if dma_opportunistictls %}
+OPPORTUNISTIC_TLS
+{% endif %}
+{% if dma_starttls %}
+STARTTLS
 {% endif %}
 {% if dma_user is defined or dma_password is defined %}
 AUTHPATH /etc/dma/auth.conf
 {% endif %}
-{% if dma_starttls is defined %}
-STARTTLS
+{% if dma_fingerprint is defined %}
+FINGERPRINT {{ dma_fingerprint }}
+{% endif %}
+{% if dma_certfile is defined %}
+CERTFILE {{ dma_certfile }}
 {% endif %}
 MAILNAME {{ dma_mailname | default(ansible_nodename) }}
-{% if dma_insecure is defined %}
-INSECURE
-{% endif %}
 {% if dma_masquerade is defined %}
 MASQUERADE {{ dma_masquerade }}
+{% endif %}
+{% if dma_alias_mail is defined %}
+ALIASES /etc/aliases
+{% endif %}
+{% if dma_spooldir is defined %}
+SPOOLDIR {{ dma_spooldir }}
+{% endif %}
+{% if dma_defer %}
+DEFER
+{% endif %}
+{% if dma_fullbounce %}
+FULLBOUNCE
+{% endif %}
+{% if dma_nullclient %}
+NULLCLIENT
+{% endif %}
+{% if dma_insecure %}
+INSECURE
 {% endif %}

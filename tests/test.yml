@@ -2,4 +2,6 @@
 - hosts: localhost
   remote_user: root
   roles:
-    - ansible-role-dma
+    - role: dma
+      vars:
+        dma_smarthost: smtp.example.com

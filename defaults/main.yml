@@ -1,2 +1,21 @@
 ---
-# defaults file for dma
+# Boolean flags — set to true to enable the corresponding dma.conf directive
+dma_insecure: false
+dma_securetransfer: false
+dma_starttls: false
+dma_opportunistictls: false
+dma_defer: false
+dma_fullbounce: false
+dma_nullclient: false
+
+# String variables — leave undefined to omit from config
+# dma_smarthost: smtp.example.com   # mandatory
+# dma_port: 587
+# dma_user: user@example.com
+# dma_password: secret
+# dma_masquerade: sender@example.com
+# dma_alias_mail: admin@example.com
+# dma_mailname: "{{ ansible_nodename }}"
+# dma_fingerprint: "AA:BB:..."       # SHA256 fingerprint to pin smarthost cert
+# dma_certfile: /etc/ssl/certs/ca-certificates.crt
+# dma_spooldir: /var/spool/dma

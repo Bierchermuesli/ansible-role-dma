@@ -19,10 +19,11 @@ jobs:
       - name: Install dependencies
         run: pip install ansible ansible-lint
 
+      - name: Create role symlink
+        run: ln -s "$(pwd)" "../dma"
+
       - name: Run ansible-lint
         run: ansible-lint
 
       - name: Syntax check
-        run: |
-          ln -s "$(pwd)" "../dma"
-          ansible-playbook tests/test.yml -i tests/inventory --syntax-check
+        run: ansible-playbook tests/test.yml -i tests/inventory --syntax-check
